@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_005944) do
+ActiveRecord::Schema.define(version: 2019_08_30_171233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accessories", force: :cascade do |t|
+    t.integer "accessory_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_item", default: true
+  end
+
+  create_table "bottoms", force: :cascade do |t|
+    t.integer "bottom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_item", default: true
+  end
+
+  create_table "hoodies", force: :cascade do |t|
+    t.integer "hoody_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_item", default: true
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -27,6 +48,20 @@ ActiveRecord::Schema.define(version: 2019_08_30_005944) do
     t.boolean "shirts", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "long_sleeves", force: :cascade do |t|
+    t.integer "long_sleeve_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_item", default: true
+  end
+
+  create_table "shirts", force: :cascade do |t|
+    t.integer "shirt_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_item", default: true
   end
 
   create_table "users", force: :cascade do |t|
